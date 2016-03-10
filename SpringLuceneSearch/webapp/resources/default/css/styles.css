@@ -1,0 +1,159 @@
+body {
+    background: #FFFFFF;
+}
+
+.firefly {
+    background: #ffe800;
+}
+
+.fireflyDate {
+    background: #33ff4f;
+}
+
+body > .container {
+    padding-top: 90px;
+}
+
+form.form-inline {
+    width: 900px;
+    margin: 0 auto 0 150px;
+}
+
+input {
+    width: 500px !important;
+    margin-left: 0 !important;
+
+}
+
+select {
+    margin-left: 10px;
+}
+
+img {
+    margin-left: 80px;
+    margin-top: -30px !important;
+}
+
+button {
+    margin-left: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: darkgrey;
+}
+
+form.form-inline {
+    margin-bottom: 15px !important;
+    width: 900px;
+    margin-top: 8px !important;
+    margin-left: 0;
+}
+
+input {
+    width: 600px !important;
+    margin-left: 0 !important;
+
+}
+
+select {
+    margin-left: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: darkgrey;
+}
+
+button.glyphicon.input-group-addon.glyphicon-search {
+    margin-left: -1px;
+    padding: 10px;
+    height: 35px;
+    width: 50px;
+    margin-top: -2px;
+}
+
+div#navbar {
+    margin-top: 8px !important;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    margin-bottom: -40px;
+}
+
+form#swFormComponent {
+    position: relative;
+    top: -45px;
+    left: -25px;
+}
+
+#showcase {
+    margin-left: 140px;
+}
+
+#showcase #q {
+    width: 550px !important;
+}
+
+#main #q {
+    width: 600px !important;
+}
+
+li.active {
+    margin-left: -170px;
+}
+
+.navbar-brand > img {
+    position: relative;
+    left: -200px;
+    top: 25px;
+}
+
+.active .form-inline .form-inline .form-group #q > .btn {
+    margin-left: -50px !important;
+}
+
+form#data_2, form#data_1 {
+    position: absolute !important;
+    top: 15px;
+}
+
+form#data_2 {
+    left: 1180px;
+}
+
+form#data_1 {
+    left: 1050px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.pagination {
+    width: 100%;
+    margin: 20px auto;
+}
+
+div#pagination {
+    margin-top: -90px;
+
+}
+
+a#viewMore {
+    margin-left: 300px;
+    margin-bottom: 30px;
+}
+
+.alert-warning {
+    position: absolute;
+    /*margin-top: 10px;*/
+}
+
+p.text-muted {
+    text-align: center;
+}

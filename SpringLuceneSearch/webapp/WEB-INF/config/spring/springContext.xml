@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <context:annotation-config/>
+
+    <task:annotation-driven/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <context:component-scan base-package="com.spdukraine.testtask.search"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+                  p:paramName="lang"
+            />
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"
+                  p:paramName="theme"
+            />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="tilesConfigurer"
+          class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
+          p:definitions-ref="tilesDefinitions"
+          p:completeAutoload="true"
+    />
+    <util:list id="tilesDefinitions">
+        <value>${spring.tilesConfigurer.tilesDefinitions.ftl}</value>
+    </util:list>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          p:basename="${spring.messageSource.basename}"
+          p:defaultEncoding="UTF-8"
+    />
+
+    <bean id="themeSource"
+          class="org.springframework.ui.context.support.ResourceBundleThemeSource"
+          p:basenamePrefix="${spring.themeSource.basenamePrefix}"
+          p:defaultEncoding="UTF-8"
+    />
+
+</beans>

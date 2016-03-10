@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="layout" template="/WEB-INF/views/tiles/layout.ftl"
+                templateType="freemarker">
+        <put-attribute name="title" value="layout.title.text" type="freemarker"/>
+        <put-attribute name="header" value="/WEB-INF/views/pages/components/header.ftl" type="freemarker"/>
+        <put-attribute name="content" value="" type="freemarker"/>
+        <put-attribute name="footer" value="/WEB-INF/views/pages/components/footer.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="index" extends="layout" templateType="freemarker">
+        <put-attribute name="assign" value="index" type="freemarker" cascade="true"/>
+        <put-attribute name="title" value="index.title.text" type="freemarker"/>
+        <put-attribute name="content" value="/WEB-INF/views/pages/ftl/index-searcher.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="search" extends="layout" templateType="freemarker">
+        <put-attribute name="assign" value="search" type="freemarker" cascade="true"/>
+        <put-attribute name="title" value="search.title.text" type="freemarker"/>
+        <put-attribute name="content" value="/WEB-INF/views/pages/ftl/index-searcher.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="result" extends="layout" templateType="freemarker">
+        <put-attribute name="assign" value="result" type="freemarker" cascade="true"/>
+        <put-attribute name="title" value="result.title.text" type="freemarker"/>
+        <put-attribute name="header" value="/WEB-INF/views/pages/components/header-result.ftl" type="freemarker"/>
+        <put-attribute name="content" value="/WEB-INF/views/pages/ftl/result.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="error" extends="layout" templateType="freemarker">
+        <put-attribute name="title" value="error.title.text" type="freemarker"/>
+        <put-attribute name="content" value="/WEB-INF/views/pages/ftl/error.ftl" type="freemarker"/>
+    </definition>
+
+</tiles-definitions>
